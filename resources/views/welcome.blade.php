@@ -1,8 +1,8 @@
 @extends('layouts.app', [
-    'namePage' => 'Welcome',
+    'namePage' => 'Witaj',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'welcome',
-    'backgroundImage' => asset('assets') . "/img/bg14.jpg",
+    'backgroundImage' => asset('assets') . "/img/bg/main.jpg",
 ])
 
 @section('content')
@@ -14,7 +14,14 @@
                   <div class="header-body text-center mb-7">
                       <div class="row justify-content-center">
                           <div class="col-lg-12 col-md-9">
-                              <h3 class="text-white">{{ __('Welcome to Now Ui Dashboard Free Laravel Live Preview.') }}</h3>
+                              <h3 class="text-white">Platforma kursowa LNT</h3>
+
+                              <p class="text-lead mt-3 mb-0 text-center">
+                                  <a href="/" class="btn btn-primary">Zobacz dostępne kursy</a>
+                                  <a href="/" class="btn btn-primary">Zaloguj się</a>
+                              </p>
+
+
                               <p class="text-lead text-light mt-3 mb-0">
                                   @include('alerts.migrations_check')
                               </p>
