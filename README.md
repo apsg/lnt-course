@@ -1,1 +1,1 @@
-kurs
+# lnt-course
