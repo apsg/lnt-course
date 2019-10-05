@@ -2,7 +2,7 @@
     'namePage' => 'Login page',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'login',
-    'backgroundImage' => asset('assets') . "/img/bg14.jpg",
+    'backgroundImage' => asset('assets') . "/img/bg/login.jpg",
 ])
 
 @section('content')
@@ -72,7 +72,7 @@
                 <div class="pull-right">
                     <h6>
                     <a href="{{ route('password.request') }}" class="link footer-link">{{ __('Forgot Password?') }}</a>
-                    </h6>                
+                    </h6>
                 </div>
                 </div>
             </div>
