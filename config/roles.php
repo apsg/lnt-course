@@ -1,16 +1,18 @@
 <?php
 
+use App\Helpers\RolesHelper;
+
 return [
-    'superadmin' => [
+    RolesHelper::SUPERADMIN => [
         // all
     ],
 
-    'manager' => [
+    RolesHelper::MANAGER => [
         'add own course',
         'delete own course',
     ],
 
-    'user' => [
+    RolesHelper::USER => [
         'course apply',
     ],
 ];
