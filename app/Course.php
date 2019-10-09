@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @method Builder|Course isPublished()
  * @method Builder|Course isOpen()
+ * @method Builder|Course isFuture()
+ * @method Builder|Course isApplicable()
  *
  */
 class Course extends Model
@@ -60,8 +62,15 @@ class Course extends Model
         });
     }
 
+    public function scopeIsFuture(Builder $query)
+    {
+        return $query->where('starts_at', '>', Carbon::now());
+    }
+
     public function scopeIsApplicable(Builder $query)
     {
-        return $query->isPublished()->isOpen();
+        return $query->isPublished()
+            ->isFuture()
+            ->isOpen();
     }
 }

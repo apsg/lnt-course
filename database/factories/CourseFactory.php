@@ -9,6 +9,6 @@ $factory->define(Course::class, function (Faker $faker) {
     return [
         'title'       => $faker->sentence,
         'description' => $faker->text,
-
+        'starts_at'   => $faker->dateTimeBetween('+1 week', '+1 month'),
     ];
 });
