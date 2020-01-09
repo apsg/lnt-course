@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'class' => 'sidebar-mini ',
-    'namePage' => 'User Profile',
+    'namePage' => 'Profil użytkownika',
     'activePage' => 'profile',
     'activeNav' => '',
 ])
@@ -13,7 +13,7 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header">
-            <h5 class="title">{{__(" Edit Profile")}}</h5>
+            <h5 class="title">{{__("Edit Profile")}}</h5>
           </div>
           <div class="card-body">
             <form method="post" action="{{ route('profile.update') }}" autocomplete="off"
