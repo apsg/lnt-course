@@ -18,6 +18,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix' => '/kursy'], function () {
+    Route::get('/', 'CourseController@index');
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController', ['except' => ['show']]);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
@@ -26,6 +30,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
 });
 
-Route::group(['prefix' => '/kursy'], function () {
-    Route::get('/', 'CourseController@index');
-});
