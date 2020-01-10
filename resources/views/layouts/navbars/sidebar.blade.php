@@ -1,8 +1,6 @@
-<div class="sidebar" data-color="orange">
+<div class="sidebar bg-green" data-color="darkgreen">
     <div class="logo">
-        <a href="{{ url('/') }}" class="simple-text logo-mini">
-            {{ __('LNT') }}
-        </a>
+        @include('layouts.logo')
         <a href="{{ url('/') }}" class="simple-text logo-normal">
             {{ __('Kursy') }}
         </a>

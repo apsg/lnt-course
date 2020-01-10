@@ -14,12 +14,15 @@
                         <div class="header-body text-center mb-7">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 col-md-9">
+
+                                    <img src="{{ asset('/assets/img/logo.png') }}" style="height:150px;" />
+
                                     <h3 class="text-white">Platforma kursowa LNT</h3>
 
                                     <p class="text-lead mt-3 mb-0 text-center">
-                                        <a href="/kursy" class="btn btn-primary">Zobacz dostępne kursy</a>
+                                        <a href="/kursy" class="btn btn-green">Zobacz dostępne kursy</a>
                                         @guest
-                                            <a href="/login" class="btn btn-primary">Zaloguj się</a>
+                                            <a href="/login" class="btn btn-green">Zaloguj się</a>
                                         @endguest
                                     </p>
 

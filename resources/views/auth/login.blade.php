@@ -28,10 +28,10 @@
             <div class="col-md-4 ml-auto mr-auto">
                 <form role="form" method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="card card-login card-plain">
+                    <div class="card card-login card-plain bg-transparent border border-0">
                         <div class="card-header ">
                             <div class="logo-container">
-                                <img src="{{ asset('assets/img/now-logo.png') }}" alt="">
+                                <img src="{{ asset('assets/img/logo.png') }}" alt="">
                             </div>
                         </div>
                         <div class="card-body ">
@@ -58,7 +58,7 @@
                                         <i class="now-ui-icons objects_key-25"></i></i>
                                     </div>
                                 </div>
-                                <input placeholder="Password"
+                                <input placeholder="Hasło"
                                        class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                        name="password" placeholder="{{ __('Password') }}" type="password" value="secret"
                                        required>
@@ -71,17 +71,17 @@
                         </div>
                         <div class="card-footer ">
                             <button type="submit"
-                                    class="btn btn-primary btn-round btn-lg btn-block mb-3">{{ __('Get Started') }}</button>
+                                    class="btn btn-green btn-round btn-lg btn-block mb-3">Zaloguj się</button>
                             <div class="pull-left">
                                 <h6>
                                     <a href="{{ route('register') }}"
-                                       class="link footer-link">{{ __('Create Account') }}</a>
+                                       class="link footer-link">Rejestracja</a>
                                 </h6>
                             </div>
                             <div class="pull-right">
                                 <h6>
                                     <a href="{{ route('password.request') }}"
-                                       class="link footer-link">{{ __('Forgot Password?') }}</a>
+                                       class="link footer-link">Zapomniane hasło</a>
                                 </h6>
                             </div>
                         </div>

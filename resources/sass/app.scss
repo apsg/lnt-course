@@ -3,3 +3,31 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
+
+$color-green: #006400;
+
+.btn-green {
+    background-color: $color-green;
+    border-color: $color-green;
+    color: #ffffff;
+
+    &:hover {
+        background-color: darken($color-green, 5%);
+        border-color: darken($color-green, 5%);
+        color: #ffffff;
+    }
+}
+
+.bg-green {
+    background-color: $color-green;
+}
+
+[data-color="darkgreen"] {
+    &:after {
+        background: $color-green;
+    }
+
+    .nav li.active > a:not([data-toggle="collapse"]) {
+        color: $color-green;
+    }
+}
