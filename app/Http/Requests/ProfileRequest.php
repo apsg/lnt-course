@@ -12,16 +12,6 @@ use Illuminate\Foundation\Http\FormRequest;
 class ProfileRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return auth()->check();
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -29,26 +19,21 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'       => ['required', 'min:3'],
-            'email'      => ['required', 'email', Rule::unique((new User)->getTable())->ignore(auth()->id())],
-            'photo'      => ['nullable', 'image'],
-            'choragiew'  => [
+            'name'      => ['required', 'min:3'],
+            'email'     => ['required', 'email', Rule::unique((new User)->getTable())->ignore(auth()->id())],
+            'photo'     => ['nullable', 'image'],
+            'choragiew' => [
                 'required',
-                'numeric',
                 new ChoragiewRule(),
             ],
-            'stopien'    => [
+            'stopien'   => [
                 'required',
-                'numeric',
                 new StopnieRule(),
             ],
-            'okk'        => [
-                'required',
-                'numeric',
-                new OKKRule(),
-            ],
-            'srodowisko' => 'string',
-            'full_name'  => 'string',
+//            'okk'       => [
+//                'required',
+//                new OKKRule(),
+//            ],
         ];
     }
 }

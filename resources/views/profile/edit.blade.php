@@ -58,9 +58,9 @@
                                 </div>
                             </div>
 
-                            <stopien selected="{{ auth()->user()->stopien }}"></stopien>
+                            <stopien selected="{{ old('stopien', auth()->user()->stopien) }}"></stopien>
 
-                            <choragiew selected="{{ auth()->user()->choragiew }}"></choragiew>
+                            <choragiew selected="{{ old('choragiew', auth()->user()->choragiew) }}"></choragiew>
 
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round">Zapisz</button>
