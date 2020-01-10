@@ -6,6 +6,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * @property string email
+ * @property string name
+ * @property int    choragiew
+ * @property int    stopien
+ * @property int    okk
+ * @property string srodowisko
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -20,6 +28,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'stopien',
+        'choragiew',
+        'okk',
+        'srodowisko',
     ];
 
     /**
@@ -40,4 +52,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getGravatarAttribute()
+    {
+        $size = 125;
+        $default = asset('/asset/img/avatar-default.png');
+
+        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email))) . "?d=" . urlencode($default) . "&s=" . $size;
+    }
 }

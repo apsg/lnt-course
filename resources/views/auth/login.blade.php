@@ -44,7 +44,7 @@
                     </span>
                                 <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                        placeholder="{{ __('Email') }}" type="email" name="email"
-                                       value="{{ old('email', 'admin@nowui.com') }}" required autofocus>
+                                       value="{{ old('email') }}" required autofocus>
                             </div>
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" style="display: block;" role="alert">
@@ -60,7 +60,7 @@
                                 </div>
                                 <input placeholder="Hasło"
                                        class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                       name="password" placeholder="{{ __('Password') }}" type="password" value="secret"
+                                       name="password" placeholder="{{ __('Password') }}" type="password"
                                        required>
                             </div>
                             @if ($errors->has('password'))
@@ -71,7 +71,8 @@
                         </div>
                         <div class="card-footer ">
                             <button type="submit"
-                                    class="btn btn-green btn-round btn-lg btn-block mb-3">Zaloguj się</button>
+                                    class="btn btn-green btn-round btn-lg btn-block mb-3">Zaloguj się
+                            </button>
                             <div class="pull-left">
                                 <h6>
                                     <a href="{{ route('register') }}"

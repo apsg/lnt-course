@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group">
-                                        <label>{{__(" Name")}}</label>
+                                        <label>{{__("Name")}}</label>
                                         <input type="text" name="name" class="form-control"
                                                value="{{ old('name', auth()->user()->name) }}">
                                         @include('alerts.feedback', ['field' => 'name'])
@@ -36,13 +36,18 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">{{__(" Email address")}}</label>
+                                        <label for="exampleInputEmail1">{{__("Email address")}}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
                                                value="{{ old('email', auth()->user()->email) }}">
                                         @include('alerts.feedback', ['field' => 'email'])
                                     </div>
                                 </div>
                             </div>
+
+                            <stopien selected="{{ auth()->user()->stopien }}"></stopien>
+
+                            <choragiew selected="{{ auth()->user()->choragiew }}"></choragiew>
+
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round">Zapisz</button>
                             </div>
@@ -71,9 +76,9 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>{{__(" New password")}}</label>
+                                        <label>{{__("New password")}}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                               placeholder="{{ __('New Password') }}" type="password" name="password"
+                                               placeholder="{{ __('New password') }}" type="password" name="password"
                                                required>
                                         @include('alerts.feedback', ['field' => 'password'])
                                     </div>
@@ -82,7 +87,7 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>{{__(" Confirm New Password")}}</label>
+                                        <label>{{__("Confirm New Password")}}</label>
                                         <input class="form-control" placeholder="{{ __('Confirm New Password') }}"
                                                type="password" name="password_confirmation" required>
                                     </div>
@@ -104,7 +109,7 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{asset('assets')}}/img/default-avatar.png"
+                                <img class="avatar border-gray" src="{{ auth()->user()->gravatar }}"
                                      alt="...">
                                 <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
@@ -113,20 +118,14 @@
                             </p>
                         </div>
                     </div>
-                    <hr>
-                    <div class="button-container">
-                        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                            <i class="fab fa-facebook-square"></i>
-                        </button>
-                        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                            <i class="fab fa-google-plus-square"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+<script>
+    import Choragiew from "../../js/components/Choragiew";
+    export default {
+        components: {Choragiew}
+    }
+</script>
