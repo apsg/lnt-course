@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('choragiew', require('./components/Choragiew.vue').default);
 Vue.component('stopien', require('./components/Stopien.vue').default);
+Vue.component('okk', require('./components/OKK.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

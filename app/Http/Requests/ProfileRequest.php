@@ -30,10 +30,10 @@ class ProfileRequest extends FormRequest
                 'required',
                 new StopnieRule(),
             ],
-//            'okk'       => [
-//                'required',
-//                new OKKRule(),
-//            ],
+            'okk'       => [
+                'required',
+                new OKKRule(),
+            ],
         ];
     }
 }

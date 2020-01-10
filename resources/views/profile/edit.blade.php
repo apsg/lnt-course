@@ -62,6 +62,8 @@
 
                             <choragiew selected="{{ old('choragiew', auth()->user()->choragiew) }}"></choragiew>
 
+                            <okk selected="{{ old('okk', auth()->user()->okk)  }}"></okk>
+
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round">Zapisz</button>
                             </div>
