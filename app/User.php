@@ -13,6 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property int    stopien
  * @property int    okk
  * @property string srodowisko
+ * @property string full_name
  */
 class User extends Authenticatable
 {
@@ -32,6 +33,7 @@ class User extends Authenticatable
         'choragiew',
         'okk',
         'srodowisko',
+        'full_name',
     ];
 
     /**

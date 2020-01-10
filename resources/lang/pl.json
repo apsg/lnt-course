@@ -1,11 +1,12 @@
 {
     "Edit Profile": "Edytuj profil",
-    "Name": "Nazwa",
+    "Name": "Nazwa konta",
     " Name": "Nazwa",
     "Email address": "Adres email",
     "Password": "Hasło",
     "New password": "Nowe hasło",
     "Confirm New Password": "Potwierdź nowe hasło",
     "Current Password": "Aktualne hasło",
-    "Change Password": "Zmień hasło"
+    "Change Password": "Zmień hasło",
+    "Profile successfully updated.": "Zaktualizowano"
 }

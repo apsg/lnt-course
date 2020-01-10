@@ -36,6 +36,19 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group">
+                                        <label>Imię i nazwisko</label>
+                                        <input type="text" name="full_name" class="form-control"
+                                               value="{{ old('full_name', auth()->user()->full_name) }}">
+                                        <p class="small text-dark">To, co tu wpiszesz będzie pojawiać się na listach publicznych, jeśli wyrazisz
+                                            zgodę na publikację.
+                                            To imię również będzie używane przy autogenerowanych certyfikatach.</p>
+                                        @include('alerts.feedback', ['field' => 'full_name'])
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 pr-1">
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">{{__("Email address")}}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
                                                value="{{ old('email', auth()->user()->email) }}">
@@ -125,6 +138,7 @@
 @endsection
 <script>
     import Choragiew from "../../js/components/Choragiew";
+
     export default {
         components: {Choragiew}
     }
