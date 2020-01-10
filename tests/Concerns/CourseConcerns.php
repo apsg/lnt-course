@@ -1,7 +1,7 @@
 <?php
 namespace Tests\Concerns;
 
-use App\Course;
+use App\Domains\Courses\Models\Course;
 use App\User;
 
 trait CourseConcerns
