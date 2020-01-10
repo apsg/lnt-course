@@ -1,5 +1,7 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Domains\Courses\Controllers;
+
+use App\Http\Controllers\Controller;
 
 class CourseController extends Controller
 {

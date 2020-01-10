@@ -39,7 +39,8 @@
                                         <label>Imię i nazwisko</label>
                                         <input type="text" name="full_name" class="form-control"
                                                value="{{ old('full_name', auth()->user()->full_name) }}">
-                                        <p class="small text-dark">To, co tu wpiszesz będzie pojawiać się na listach publicznych, jeśli wyrazisz
+                                        <p class="small text-dark">To, co tu wpiszesz będzie pojawiać się na listach
+                                            publicznych, jeśli wyrazisz
                                             zgodę na publikację.
                                             To imię również będzie używane przy autogenerowanych certyfikatach.</p>
                                         @include('alerts.feedback', ['field' => 'full_name'])

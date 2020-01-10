@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "apsg/zhp": "dev-master",
         "barryvdh/laravel-debugbar": "^3.2",
         "fideloper/proxy": "^4.0",
         "laravel-frontend-presets/now-ui-dashboard": "^1.0",
@@ -60,5 +61,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "apsg/zhp": {
+            "type": "path",
+            "url": "/home/gacek/html/multisite/packages/Apsg/Zhp"
+        }
     }
 }

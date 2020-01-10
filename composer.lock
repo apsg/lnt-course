@@ -1,11 +1,69 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "889a7f3920ac73a67ac94da6d7dbd857",
+    "content-hash": "75bc255d07981d93161827500e305887",
     "packages": [
+        {
+            "name": "apsg/zhp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apsg/ZHP.git",
+                "reference": "19c87ccb9ba7ed9455054394d8901cccd54a7ae9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apsg/ZHP/zipball/19c87ccb9ba7ed9455054394d8901cccd54a7ae9",
+                "reference": "19c87ccb9ba7ed9455054394d8901cccd54a7ae9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5|~6"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3|~4",
+                "phpunit/phpunit": "^8.0",
+                "sempro/phpunit-pretty-print": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Apsg\\ZHP\\ZhpServiceProvider"
+                    ],
+                    "aliases": {
+                        "ZHP": "Apsg\\ZHP\\Facades\\ZHP"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Apsg\\ZHP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Szymon Gackowski",
+                    "email": "szymon@gackowski.edu.pl",
+                    "homepage": "http://gackowski.edu.pl"
+                }
+            ],
+            "description": ":description",
+            "homepage": "https://github.com/apsg/zhp",
+            "keywords": [
+                "ZHP",
+                "laravel"
+            ],
+            "time": "2020-01-10T18:10:50+00:00"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.2.8",
@@ -5119,7 +5177,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "apsg/zhp": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
