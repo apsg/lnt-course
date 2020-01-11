@@ -33,7 +33,7 @@
                 </div>
             </li>
             <li class="@if ($activePage == 'courses') active @endif">
-                <a href="{{ route('page.index','icons') }}">
+                <a href="{{ route('course.index') }}">
                     <i class="fas fa-leaf"></i>
                     <p>Kursy</p>
                 </a>

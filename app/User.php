@@ -7,13 +7,16 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
- * @property string email
- * @property string name
- * @property int    choragiew
- * @property int    stopien
- * @property int    okk
- * @property string srodowisko
- * @property string full_name
+ * @property string      email
+ * @property string      name
+ * @property int         choragiew
+ * @property int         stopien
+ * @property int         okk
+ * @property string      srodowisko
+ * @property string      full_name
+ *
+ * @property-read string gravatar
+ * @property-read string public_name
  */
 class User extends Authenticatable
 {
@@ -61,5 +64,14 @@ class User extends Authenticatable
         $default = asset('/asset/img/avatar-default.png');
 
         return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email))) . "?d=" . urlencode($default) . "&s=" . $size;
+    }
+
+    public function getPublicNameAttribute() : string
+    {
+        if (!empty($this->full_name)) {
+            return $this->full_name;
+        }
+
+        return $this->name;
     }
 }
