@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Domains\Courses\Models\Course;
+use App\Domains\Courses\Policies\CoursePolicy;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        Course::class => CoursePolicy::class,
     ];
 
     /**
@@ -25,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::before(function ($user, $ability) {
+        Gate::before(function (User $user, $ability) {
             return $user->hasRole('superadmin') ? true : null;
         });
     }

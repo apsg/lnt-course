@@ -133,6 +133,13 @@
                                 {{ auth()->user()->email }}
                             </p>
                         </div>
+                        <hr/>
+                        <h5 class="title">Twoje uprawnienia:</h5>
+                        <ul>
+                            @foreach(auth()->user()->roles as $role)
+                                <li>{{ __('roles.'.$role->name) }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

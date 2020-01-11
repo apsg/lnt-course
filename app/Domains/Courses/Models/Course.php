@@ -2,6 +2,7 @@
 
 namespace App\Domains\Courses\Models;
 
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -45,6 +46,11 @@ class Course extends Model
         'published_at',
         'closed_at',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function scopeIsPublished(Builder $query)
     {
