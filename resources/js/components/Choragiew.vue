@@ -1,8 +1,8 @@
 <template>
     <div class="row">
-        <div class="col-md-12">
+        <div :class="classes">
             <div class="form-group">
-                <label v-if="label" for="choragiew">Chorągiew</label>
+                <label v-if="label || label == undefined" for="choragiew">Chorągiew</label>
                 <select name="choragiew" id="choragiew" class="form-control" @change="change" v-model="value">
                     <option v-for="item in items" :selected="selected == item.id" :value="item.id">{{ item.name }}
                     </option>
@@ -17,7 +17,12 @@
         name: "Choragiew",
         props: {
             "selected": null,
-            "label": true,
+            "label": {
+                default: true
+            },
+            "classes": {
+                default: 'col-md-12'
+            },
         },
         data () {
             return {

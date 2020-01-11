@@ -60,7 +60,10 @@
 
                             <stopien selected="{{ old('stopien', auth()->user()->stopien) }}"></stopien>
 
-                            <choragiew selected="{{ old('choragiew', auth()->user()->choragiew) }}"></choragiew>
+                            <choragiew
+                                selected="{{ old('choragiew', auth()->user()->choragiew) }}"
+                                classes="col-md-7"
+                            ></choragiew>
 
                             <okk selected="{{ old('okk', auth()->user()->okk)  }}"></okk>
 

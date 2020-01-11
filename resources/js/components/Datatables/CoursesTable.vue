@@ -32,6 +32,9 @@
 </template>
 
 <script>
+
+    import CourseOptions from './CourseOptions.vue';
+
     export default {
         name: "CoursesTable",
 
@@ -55,12 +58,17 @@
                     }, {
                         label: 'Termin',
                         name: 'term',
-                        orderable: true,
+                        orderable: false,
                     }, {
                         label: 'Organizator',
                         name: 'user.name',
                         orderable: false,
-                    },
+                    }, {
+                        label: 'Opcje',
+                        name: 'id',
+                        orderable: false,
+                        component: CourseOptions,
+                    }
                 ]
             };
         }
