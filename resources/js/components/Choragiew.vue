@@ -1,9 +1,9 @@
 <template>
     <div class="row">
-        <div class="col-md-7 pr-1">
+        <div class="col-md-12">
             <div class="form-group">
-                <label for="choragiew">Chorągiew</label>
-                <select name="choragiew" id="choragiew" class="form-control">
+                <label v-if="label" for="choragiew">Chorągiew</label>
+                <select name="choragiew" id="choragiew" class="form-control" @change="change" v-model="value">
                     <option v-for="item in items" :selected="selected == item.id" :value="item.id">{{ item.name }}
                     </option>
                 </select>
@@ -16,13 +16,15 @@
     export default {
         name: "Choragiew",
         props: {
-            "selected": null
+            "selected": null,
+            "label": true,
         },
         data () {
             return {
+                value: this.selected,
                 items: [
                     {
-                        id: 0,
+                        id: null,
                         name: '--'
                     }, {
                         id: 1,
@@ -78,6 +80,14 @@
                     }
                 ]
             }
+        },
+
+        methods: {
+
+            change () {
+                this.$emit('input', this.value);
+            }
+
         }
     }
 </script>

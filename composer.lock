@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75bc255d07981d93161827500e305887",
+    "content-hash": "c782eab50d14aab70c80025fd0de40fd",
     "packages": [
         {
             "name": "apsg/zhp",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/apsg/ZHP.git",
-                "reference": "19c87ccb9ba7ed9455054394d8901cccd54a7ae9"
+                "reference": "9bb9efebcbea37fd1f92cb9b955fa8154a2af8e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apsg/ZHP/zipball/19c87ccb9ba7ed9455054394d8901cccd54a7ae9",
-                "reference": "19c87ccb9ba7ed9455054394d8901cccd54a7ae9",
+                "url": "https://api.github.com/repos/apsg/ZHP/zipball/9bb9efebcbea37fd1f92cb9b955fa8154a2af8e8",
+                "reference": "9bb9efebcbea37fd1f92cb9b955fa8154a2af8e8",
                 "shasum": ""
             },
             "require": {
@@ -62,7 +62,7 @@
                 "ZHP",
                 "laravel"
             ],
-            "time": "2020-01-10T18:10:50+00:00"
+            "time": "2020-01-11T11:54:10+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -593,6 +593,49 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "jamesdordoy/laravelvuedatatable",
+            "version": "1.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamesdordoy/Laravel-Vue-Datatable_Laravel-Package.git",
+                "reference": "e34ee58e57e5e10dd63ad3432cb1d10cd8071470"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jamesdordoy/Laravel-Vue-Datatable_Laravel-Package/zipball/e34ee58e57e5e10dd63ad3432cb1d10cd8071470",
+                "reference": "e34ee58e57e5e10dd63ad3432cb1d10cd8071470",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.7",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JamesDordoy\\LaravelVueDatatable\\Providers\\LaravelVueDatatableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JamesDordoy\\LaravelVueDatatable\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "James Dordoy",
+                    "email": "jamesdordoy@gmail.com"
+                }
+            ],
+            "time": "2020-01-10T17:30:15+00:00"
         },
         {
             "name": "laravel-frontend-presets/now-ui-dashboard",

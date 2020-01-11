@@ -4,9 +4,11 @@ namespace App\Domains\Courses\Models;
 
 use App\Helpers\PermissionsHelper;
 use App\User;
+use Apsg\ZHP\Choragwie\ChoragwieHelper;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 /**
  * Class Course
@@ -21,9 +23,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null published_at
  * @property Carbon|null closed_at
  * @property int         type
+ * @property int         location_choragiew
+ * @property string      location
  *
  * @property-read User   user
  * @property-read string term
+ * @property-read string choragiew
+ * @property-read string type_string
  *
  * @method Builder|Course isPublished()
  * @method Builder|Course isOpen()
@@ -35,6 +41,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Course extends Model
 {
+    use LaravelVueDatatableTrait;
+
     const TYPE_ADEPT = 1;
     const TYPE_TRAINER = 2;
     const TYPE_ME = 3;
@@ -48,6 +56,12 @@ class Course extends Model
         'published_at',
         'closed_at',
         'type',
+    ];
+
+    protected $appends = [
+        'term',
+        'choragiew',
+        'type_string',
     ];
 
     protected $dates = [
@@ -112,6 +126,24 @@ class Course extends Model
         return $query->isPublished()->isFuture();
     }
 
+    public function scopeForType(Builder $query, $type = null)
+    {
+        if ($type === null) {
+            return;
+        }
+
+        $query->where('type', $type);
+    }
+
+    public function scopeForChoragiew(Builder $query, $choragiew = null)
+    {
+        if ($choragiew === null) {
+            return;
+        }
+
+        $query->where('location_choragiew', $choragiew);
+    }
+
     public function getTermAttribute() : string
     {
         $dates[] = $this->starts_at->format('Y-m-d H:i');
@@ -126,5 +158,10 @@ class Course extends Model
     public function getTypeStringAttribute() : string
     {
         return __('lnt.types.' . $this->type);
+    }
+
+    public function getChoragiewAttribute() : string
+    {
+        return ChoragwieHelper::name($this->location_choragiew);
     }
 }

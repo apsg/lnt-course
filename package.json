@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.11.2",
-        "bootstrap": "^4.3.1"
+        "bootstrap": "^4.3.1",
+        "laravel-vue-datatable": "^0.5.1"
     }
 }

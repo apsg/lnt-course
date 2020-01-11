@@ -19,9 +19,13 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+import DataTable from 'laravel-vue-datatable';
+Vue.use(DataTable);
+
 Vue.component('choragiew', require('./components/Choragiew.vue').default);
 Vue.component('stopien', require('./components/Stopien.vue').default);
 Vue.component('okk', require('./components/OKK.vue').default);
+Vue.component('courses-table', require('./components/Datatables/CoursesTable.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
