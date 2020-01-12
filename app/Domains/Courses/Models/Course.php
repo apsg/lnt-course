@@ -31,7 +31,6 @@ use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
  * @property-read string choragiew
  * @property-read string type_string
  *
- * @method Builder|Course isPublished()
  * @method Builder|Course isOpen()
  * @method Builder|Course isFuture()
  * @method Builder|Course isApplicable()
@@ -163,5 +162,10 @@ class Course extends Model
     public function getChoragiewAttribute() : string
     {
         return ChoragwieHelper::name($this->location_choragiew);
+    }
+
+    public function isPublished() : bool
+    {
+        return $this->published_at !== null;
     }
 }

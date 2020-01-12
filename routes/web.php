@@ -22,7 +22,10 @@ Route::group(['prefix' => '/kursy'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', UserController::class, ['except' => ['show']]);
+
     Route::resource('course', CourseController::class);
+    Route::get('course/{course}/publish', CourseController::class . '@publish');
+
     Route::get('profile', ['as' => 'profile.edit', 'uses' => ProfileController::class . '@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => ProfileController::class . '@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => ProfileController::class . '@password']);

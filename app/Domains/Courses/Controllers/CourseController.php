@@ -3,7 +3,10 @@
 namespace App\Domains\Courses\Controllers;
 
 use App\Domains\Courses\Models\Course;
+use App\Helpers\PermissionsHelper;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Gate;
 
 class CourseController extends Controller
 {
@@ -39,5 +42,18 @@ class CourseController extends Controller
     public function store()
     {
 
+    }
+
+    public function publish(Course $course)
+    {
+        if (!Gate::allows('update', $course)) {
+            return false;
+        }
+
+        $course->update([
+            'published_at' => Carbon::now(),
+        ]);
+
+        return back();
     }
 }

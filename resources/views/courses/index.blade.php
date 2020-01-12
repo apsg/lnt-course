@@ -41,7 +41,9 @@
                                         </td>
                                         <td>{{ $course->type_string }}</td>
                                         <td>{{ $course->term }}</td>
-                                        <td></td>
+                                        <td>
+                                            @include('courses.course_options')
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
