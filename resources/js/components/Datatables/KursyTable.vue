@@ -33,7 +33,7 @@
 
 <script>
 
-    import KursOptions from './CourseOptions.vue';
+    import KursOptions from './KursOptions.vue';
 
     export default {
         name: "CoursesTable",
@@ -58,6 +58,10 @@
                     }, {
                         label: 'Termin',
                         name: 'term',
+                        orderable: false,
+                    }, {
+                        label: 'Organizator',
+                        name: 'user.name',
                         orderable: false,
                     }, {
                         label: 'Opcje',

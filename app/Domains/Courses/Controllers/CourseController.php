@@ -1,17 +1,21 @@
 <?php
+
 namespace App\Domains\Courses\Controllers;
 
 use App\Domains\Courses\Models\Course;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $courses = Course::permissionView(auth()->user())
-            ->orderBy('starts_at', 'ASC')
+            ->orderBy('starts_at')
             ->get();
 
         return view('courses.index')->with(compact('courses'));
@@ -19,22 +23,21 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
-        return view('courses.show')->with(compact('course'));
+
     }
 
-    public function datatable(Request $request)
+    public function edit(Course $course)
     {
-        $length = $request->input('length');
-        $sortBy = $request->input('column');
-        $orderBy = $request->input('dir');
-        $searchValue = $request->input('search');
 
-        $query = Course::with('user')
-            ->forType($request->input('type'))
-            ->forChoragiew($request->input('choragiew'))
-            ->eloquentQuery($sortBy, $orderBy, $searchValue, []);
-        $data = $query->paginate($length);
+    }
 
-        return new DataTableCollectionResource($data);
+    public function create()
+    {
+
+    }
+
+    public function store()
+    {
+
     }
 }

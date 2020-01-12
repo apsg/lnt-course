@@ -1,6 +1,7 @@
 <?php
 
 use App\Domains\Courses\Controllers\CourseController;
+use App\Domains\Courses\Controllers\ListCourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
@@ -15,8 +16,8 @@ Route::get('/', function () {
 Route::get('/home', HomeController::class . '@index')->name('home');
 
 Route::group(['prefix' => '/kursy'], function () {
-    Route::get('/', CourseController::class . '@index');
-    Route::get('/kurs/{course}', CourseController::class . '@show');
+    Route::get('/', ListCourseController::class . '@index');
+    Route::get('/{course}', ListCourseController::class . '@show');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -29,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 // Datatables routes
 Route::group(['prefix' => 'dt'], function () {
+    Route::get('kursy', ListCourseController::class . '@datatable');
     Route::get('course', CourseController::class . '@datatable');
 });
 
